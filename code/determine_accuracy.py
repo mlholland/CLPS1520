@@ -23,13 +23,14 @@ def main():
         right = dd(int)
         total = dd(int)
         for line in reader:
-            class = line[0].split('_')[0]
-            if class == line[1]:
-                right[class] += 1
-            total[class] += 1
+            classification = line[0].split('_')[0]
+            print classification, line[1]            
+            if classification == line[1]:
+                right[classification] += 1
+            total[classification] += 1
     with open(args.output, 'w') as f:
         for key in total.keys():
-            f.writeline("%s, %f, %d, %d" % (key, 1.0 * right[class] / total[class], right[class], total[class]))
+            f.write("%s, %f, %d, %d\n" % (key, 1.0 * right[key] / total[key], right[key], total[key]))
 
 
 
