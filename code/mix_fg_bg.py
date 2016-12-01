@@ -23,13 +23,16 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--bg_dir", type=str, help='background directory')
     parser.add_argument("--fg_dir", type=str, help='foreground directory')
+    parser.add_argument("--fg_dir_2", type=str, help='second foreground directory, optional', default=None)
+    parser.add_argument("--rand_pos", type=bool, help='randomize forground image position')
     parser.add_argument("--out_dir", type=str, help='output directory. Must already exist.')
-    parser.add_argument("--im_ex", type=str, help='extension of valid images, defaults to \'*.png\'.')
+    parser.add_argument("--im_ex", type=str, help='extension of valid images, defaults to \'*.png\'.', default=".png")
     args = parser.parse_args()
     
     for bg_fname in glob.glob(os.path.join(args.bg_dir,args.im_ex)):
         bg = Image.open(bg_fname)
         for fg_fname in glob.glob(os.path.join(args.fg_dir,args.im_ex)):
+
             out_image = deepcopy(bg)
             fg = Image.open(fg_fname)
             if not fg.info.has_key('transparency') and not fg.mode == 'RGBA':
