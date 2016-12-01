@@ -7,6 +7,7 @@ function [ ] = classify_inputs( input_dir, extension , output_fname )
     %extension: examples '.jpg' or '.png'
     %output_fname: filename of output file.
     %example use: classify_inputs('../misc/', '.jpg', 'out.csv')
+    %NOTE: alexnet.mat is tooo big for github, make sure there's a copy in this directory.
     
     net = vl_simplenn_tidy(load('alexnet.mat'));
     labels = net.meta.classes.description;

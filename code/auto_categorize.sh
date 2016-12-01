@@ -6,6 +6,7 @@
 #also loads modules first
 #NOTE: if matlab encounters an error, this will terminate while still in terminal
 #matlab mode. type 'quit' to get out of that.
+#BIGGER NOTE: alexnet.mat is toooo big for github. Make sure it's in this directory.
 
 module load matlab/R2015b
 module load matconvnet
