@@ -19,6 +19,12 @@ from copy import deepcopy
 def make_output_fname(bg_fname, fg_fname):
     return ''
 
+# uniformly scales img, scaled so its largest dimension
+# is scale multiplied by the corresponding background image
+# ex: img dims = 300 x 600
+#     bg dims = 100 x 100
+#     scale = .5
+# output img dims = 25 x 50
 def resize_img(img, bg, scale=.5):
     scale = 1/scale
     if img.size[0] > img.size[1]:
@@ -28,6 +34,10 @@ def resize_img(img, bg, scale=.5):
     img = img.resize((int(img.size[0] * resize_ratio), int(img.size[1] * resize_ratio)))
     return img.convert('RGBA')
 
+# places a foreground image on a background so the 
+# foreground center is positioned at pos_x,pos_y on the 
+# background, where pos_x = 0 would be the far left, and 
+# pos_x = 1 would be far right of the background
 def paste_img(fg, bg, pos_x=.5, pos_y=.5):
     pos_x = 1/pos_x
     pos_y = 1/pos_y
@@ -35,6 +45,7 @@ def paste_img(fg, bg, pos_x=.5, pos_y=.5):
     return bg
 
 def compose_img(args, bg, bg_fname):
+    #loop through first set of fg images
     for fg_fname in glob.glob(os.path.join(args.fg_dir,args.im_ex)):
         out_image = bg.copy()
 
@@ -47,6 +58,7 @@ def compose_img(args, bg, bg_fname):
         
         fg_final = resize_img(fg, bg)
 
+        #if a second foreground directory is specified, iterate through that too
         if args.fg2_dir:
             for fg2_fname in glob.glob(os.path.join(args.fg2_dir,args.im_ex)):
                 out_image = bg.copy()
@@ -67,7 +79,6 @@ def compose_img(args, bg, bg_fname):
                 out_image.save(out_fname)
                 fg2.close()
         else:
-        #out_data = mix_images(bg, fg)
             out_image = paste_img(fg_final, out_image, .5, .5)           
 
             #write output
@@ -88,9 +99,10 @@ def main():
     #TODO: parser.add_argument("--grid_pos", type=int, help='number of steps to grid fg position by', default=None)
     #TODO: parser.add_argument("--grid_size", type=int, help='number of steps to grid fg size by', default=None)
     parser.add_argument("--out_dir", type=str, help='output directory. Must already exist.')
-    parser.add_argument("--im_ex", type=str, help='extension of valid images, defaults to \'*.png\'.', default="*.png")
+    parser.add_argument("--im_ex", type=str, help='extension of valid images, defaults to \'*.png\'.', default="*.*g")
     args = parser.parse_args()
     
+    #
     if args.bg_color and args.x_dim and args.y_dim:
         bg = Image.new('F', (args.x_dim,args.y_dim), args.bg_color*255).convert("RGB")
         bg_fname = "/color.jpg"
