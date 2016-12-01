@@ -4,5 +4,3 @@ python ./mix_fg_bg.py --fg_dir f1 --fg2_dir f2 --out_dir o1 --x_dim 500 --y_dim 
 
 Make all combinations of foreground and background images in f1, f2 and b1, output dimension of background images
 python ./mix_fg_bg.py --fg_dir f1 --fg2_dir f2 --bg_dir b1 --out_dir o1
-
-Make all combinations of 
