@@ -1,0 +1,8 @@
+
+Make all combinations of two folders of foreground images in f1, f2 on a plain white background of dim: 500x500
+python ./mix_fg_bg.py --fg_dir f1 --fg2_dir f2 --out_dir o1 --x_dim 500 --y_dim 500 --bg_color 1
+
+Make all combinations of foreground and background images in f1, f2 and b1, output dimension of background images
+python ./mix_fg_bg.py --fg_dir f1 --fg2_dir f2 --bg_dir b1 --out_dir o1
+
+Make all combinations of 
