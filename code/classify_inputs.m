@@ -12,7 +12,7 @@ function [ ] = classify_inputs( input_dir, output_fname )
     net = vl_simplenn_tidy(load('alexnet.mat'));
     labels = net.meta.classes.description;
     files = dir(strcat(input_dir,'*g'));
-    numel(files)
+    num_images = numel(files)
     output_str = '';
     counter = 0;
     for file = files'
@@ -27,7 +27,7 @@ function [ ] = classify_inputs( input_dir, output_fname )
 	net_output = vl_simplenn(net, image_norm);
         cl = gather(net_output(end).x);
         [score, label] = max(cl);
-	output_str = sprintf('%s%s,"%s"\n',output_str, file.name, char(labels(label)));
+	output_str = sprintf('%s%s,"%s","%s"\n',output_str, file.name, char(labels(label)), mat2str(squeeze(cl)));
     end
 	out_file = fopen(output_fname,'a');
 	fprintf(out_file, '%s', output_str);
