@@ -10,4 +10,4 @@
 
 module load matlab/R2015b
 module load matconvnet
-matlab -nodesktop -r "vl_setupnn; classify_inputs('$1', '$2','$3'); quit;"
+matlab -nodesktop -r "vl_setupnn; classify_inputs('$1', '$2'); quit;"

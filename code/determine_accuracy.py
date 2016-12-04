@@ -19,13 +19,12 @@ def main():
     args = parser.parse_args()
 
     with open(args.input, 'r') as f:
-        reader = csv.reader(f)
+        reader = csv.reader(f, quotechar='"')
         right = dd(int)
         total = dd(int)
         for line in reader:
-            classification = line[0].split('_')[0]
-            print classification, line[1]            
-            if classification == line[1]:
+            classification = line[0].split('_')[0]            
+            if classification in line[1]:
                 right[classification] += 1
             total[classification] += 1
     with open(args.output, 'w') as f:
