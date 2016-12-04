@@ -6,6 +6,11 @@
 #directories, as well as a suffix to append to
 #the output files.
 
+#CRITICAL NOTE: Before running, make sure
+## that the run_name variable matches a mix_fg_bg version
+## that params['out_dir'] = mix_dir (the mix_dir below, that is)
+## that you set time properly (takes about 6 min for 650 images, scale that)
+
 #can either be run normally, or as an sbatch job using
 #sbatch ./full_pipe arguments
 

@@ -97,7 +97,7 @@ def compose_img(params, bg, bg_fname, data):
 
                 #write output
                 out_fname = os.path.join(params['out_dir'], fg_fname[fg_fname.rindex('/') + 1:fg_fname.rindex('.')] + '_' +  \
-                                        fg2_fname[fg2_fname.rindex('/') + 1:fg2_fname.rindex('.')] + '_' + bg_fname[bg_fname.rindex('/') + 1:])
+                                        fg2_fname[fg2_fname.rindex('/') + 1:fg2_fname.rindex('.')] + '_'  + bg_fname[bg_fname.rindex('/') + 1:])
                 out_image.save(out_fname)
                 fg2.close()
                 data[out_fname] = params
@@ -113,7 +113,7 @@ def compose_img(params, bg, bg_fname, data):
                                 #write output
                                 f = map(str, [x,y,s,oc,op])
                                 f = "_".join(f)
-                                out_fname = os.path.join(params['out_dir'], f + "_" + fg_fname[fg_fname.rindex('/') + 1:fg_fname.rindex('.')] + '_' + bg_fname[bg_fname.rindex('/') + 1:])
+                                out_fname = os.path.join(params['out_dir'], fg_fname[fg_fname.rindex('/') + 1:fg_fname.rindex('.')] + '_' + f + '_' + bg_fname[bg_fname.rindex('/') + 1:])
                                 out_image.save(out_fname)
                                 params['f_pos_x'] = x
                                 params['f_pos_y'] = y
