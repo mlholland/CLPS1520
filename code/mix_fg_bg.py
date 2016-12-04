@@ -7,17 +7,15 @@ pair, it produces a new image that contains the foreground image placed on top o
 image.
 
 '''
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageMath
 import numpy as np
 from scipy.ndimage.interpolation import zoom  as scipy_zoom
 import argparse
 import glob
 import os
 from copy import deepcopy
-
-
-def make_output_fname(bg_fname, fg_fname):
-    return ''
+import versions
+import json
 
 # uniformly scales img, scaled so its largest dimension
 # is scale multiplied by the corresponding background image
@@ -34,20 +32,44 @@ def resize_img(img, bg, scale=.5):
     img = img.resize((int(img.size[0] * resize_ratio), int(img.size[1] * resize_ratio)))
     return img.convert('RGBA')
 
+
+def center_crop_img(img, x, y):
+    if img.size[0] < img.size[1]:
+        img = img.resize((x,int(x*img.size[1]/img.size[0])))
+    else:
+        img = img.resize((int(y*img.size[0]/img.size[1]),y))
+    x_int = 0
+    y_int = 0
+    half_the_width = img.size[0] // 2
+    half_the_height = img.size[1] // 2
+    if x%2:
+        x_int = 1
+    if y%2:
+        y_int = 1
+    img = img.crop(
+    (
+        half_the_width - x//2,
+        half_the_height - y//2,
+        half_the_width + x//2 + x_int,
+        half_the_height + y//2 + y_int
+    ))
+    return img
+
 # places a foreground image on a background so the 
 # foreground center is positioned at pos_x,pos_y on the 
 # background, where pos_x = 0 would be the far left, and 
 # pos_x = 1 would be far right of the background
-def paste_img(fg, bg, pos_x=.5, pos_y=.5):
+def paste_img(fg, bg, pos_x=.5, pos_y=.5, opacity=1):
     pos_x = 1/pos_x
     pos_y = 1/pos_y
+    old_bg = bg.copy()
     bg.paste(fg,(int(bg.size[0] / pos_x - fg.size[0] / 2), int(bg.size[1] / pos_y - fg.size[1] / 2)), fg) 
+    bg = Image.blend(old_bg, bg, opacity)
     return bg
 
-def compose_img(args, bg, bg_fname):
+def compose_img(params, bg, bg_fname, data):
     #loop through first set of fg images
-    for fg_fname in glob.glob(os.path.join(args.fg_dir,args.im_ex)):
-        out_image = bg.copy()
+    for fg_fname in glob.glob(os.path.join(params['fg_dir'],params['im_ex'])):
 
         fg = Image.open(fg_fname)
         if not fg.info.has_key('transparency') and not fg.mode == 'RGBA':
@@ -59,8 +81,8 @@ def compose_img(args, bg, bg_fname):
         fg_final = resize_img(fg, bg)
 
         #if a second foreground directory is specified, iterate through that too
-        if args.fg2_dir:
-            for fg2_fname in glob.glob(os.path.join(args.fg2_dir,args.im_ex)):
+        if params['fg2_dir'] and params['two_fg']:
+            for fg2_fname in glob.glob(os.path.join(params['fg2_dir'],params['im_ex'])):
                 out_image = bg.copy()
                 fg2 = Image.open(fg2_fname)
                 if not fg2.info.has_key('transparency') and not fg2.mode == 'RGBA':
@@ -74,48 +96,78 @@ def compose_img(args, bg, bg_fname):
                 out_image = paste_img(fg2_final, out_image, .75, .5)          
 
                 #write output
-                out_fname = os.path.join(args.out_dir, fg_fname[fg_fname.rindex('/') + 1:fg_fname.rindex('.')] + '_' +  \
+                out_fname = os.path.join(params['out_dir'], fg_fname[fg_fname.rindex('/') + 1:fg_fname.rindex('.')] + '_' +  \
                                         fg2_fname[fg2_fname.rindex('/') + 1:fg2_fname.rindex('.')] + '_' + bg_fname[bg_fname.rindex('/') + 1:])
                 out_image.save(out_fname)
                 fg2.close()
+                data[out_fname] = params
         else:
-            out_image = paste_img(fg_final, out_image, .5, .5)           
-
-            #write output
-            out_fname = os.path.join(args.out_dir, fg_fname[fg_fname.rindex('/') + 1:fg_fname.rindex('.')] + '_' + bg_fname[bg_fname.rindex('/') + 1:])
-            out_image.save(out_fname)
+            for x in params['grid_pos_x']:
+                for y in params['grid_pos_y']:
+                    for s in params['grid_scale']:
+                        for oc in params['grid_occlusion']:
+                            for op in params['grid_opacity']:
+                                out_image = bg.copy()
+                                fg_final = resize_img(fg, bg, s)
+                                out_image = paste_img(fg_final, out_image, x, y, op)
+                                #write output
+                                f = map(str, [x,y,s,oc,op])
+                                f = "_".join(f)
+                                out_fname = os.path.join(params['out_dir'], f + "_" + fg_fname[fg_fname.rindex('/') + 1:fg_fname.rindex('.')] + '_' + bg_fname[bg_fname.rindex('/') + 1:])
+                                out_image.save(out_fname)
+                                params['f_pos_x'] = x
+                                params['f_pos_y'] = y
+                                params['f_scale'] = s
+                                params['occlusion'] = oc
+                                params['f_opacity'] = op
+                                params['fg_fname'] = fg_fname
+                                params['bg_fname'] = bg_fname
+                                data[out_fname] = params
+        
         fg.close()
+    return data
 
 def main():
     #parse inputs, this requires 3 directories as input at least (bg, fg, and out)
     #general usage: python ./mix_fg_bg --bg_dir DIR --fg_dir DIR --out_dir DIR [--im_ex EX]
     parser = argparse.ArgumentParser()
-    parser.add_argument("--bg_dir", type=str, help='background directory') 
-    parser.add_argument("--fg_dir", type=str, help='foreground directory')
-    parser.add_argument("--fg2_dir", type=str, help='second foreground directory, optional', default=None)
-    parser.add_argument("--x_dim", type=int, help='size of output image, note: will stretch background', default=None)
-    parser.add_argument("--y_dim", type=int, help='size of output image, note: will stretch background', default=None)
-    parser.add_argument("--bg_color", type=float, help='background color, black = 0, white = 1', default=None)
-    #TODO: parser.add_argument("--grid_pos", type=int, help='number of steps to grid fg position by', default=None)
-    #TODO: parser.add_argument("--grid_size", type=int, help='number of steps to grid fg size by', default=None)
-    parser.add_argument("--out_dir", type=str, help='output directory. Must already exist.')
-    parser.add_argument("--im_ex", type=str, help='extension of valid images, defaults to \'*.png\'.', default="*.*g")
+    parser.add_argument("-v", "--version", type=str, help='version from versions.py', default="0") 
+    parser.add_argument("-w", "--version_fix", type=str, help='helper version from versions.py, use for updating filepaths', default=None) 
     args = parser.parse_args()
-    
-    #
-    if args.bg_color and args.x_dim and args.y_dim:
-        bg = Image.new('F', (args.x_dim,args.y_dim), args.bg_color*255).convert("RGB")
+    params = {'version': args.version}
+
+    fn = getattr(versions, 'version_%s' % args.version)
+    params = fn(params)
+    if args.version_fix:
+        fn = getattr(versions, 'version_%s' % args.version_fix)
+        params = fn(params)
+
+    try:
+        with open(params['data'],'r') as data_json:
+            try:
+                data = json.load(data_json)
+            except ValueError:
+                print "No JSON data found, creating new one."
+                data = {}
+    except IOError:
+        print "No JSON data found, creating new one."
+        data = {}
+
+
+    if params['bg_color'] != None and params['x_dim'] and params['y_dim']:
+        bg = Image.new('F', (params['x_dim'],params['y_dim']), params['bg_color']*255).convert("RGB")
         bg_fname = "/color.jpg"
-        compose_img(args, bg, bg_fname)
+        data = compose_img(params, bg, bg_fname, data)
         bg.close()
     else:
-        for bg_fname in glob.glob(os.path.join(args.bg_dir,args.im_ex)):
+        for bg_fname in glob.glob(os.path.join(params['bg_dir'],params['im_ex'])):
             bg = Image.open(bg_fname)
-            if args.x_dim and args.y_dim:
-                bg = bg.resize((args.x_dim,args.y_dim))
-            compose_img(args, bg, bg_fname)
+            if params['x_dim'] and params['y_dim']:
+                bg = center_crop_img(bg, params['x_dim'], params['y_dim'])
+            data = compose_img(params, bg, bg_fname, data)
             bg.close()
-
+    with open(params['data'],'w') as data_json:
+        json.dump(data, data_json)
 
 if __name__ == '__main__':
     main()
