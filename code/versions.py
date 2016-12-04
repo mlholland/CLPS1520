@@ -17,8 +17,8 @@ def version_0(params):
     params['out_dir'] = '../dataset/images/'
     params['data'] = '../dataset/data.json'
     params['im_ex'] = '*.*g'
-    params['x_dim'] = 500
-    params['y_dim'] = 500
+    params['x_dim'] = 227
+    params['y_dim'] = 227
     params['two_fg'] = False
     params['bg_color'] = None
     params['grid_pos_x'] = [.5]
