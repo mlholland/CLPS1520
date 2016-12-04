@@ -56,3 +56,9 @@ def version_phil(params):
     params['out_dir'] = '../phil_images/o1/'
     params['data'] = '../phil_images/data.json'
     return params
+
+def version_miles_test(params):
+    params = version_0(params)
+    params['fg_dir'] = '../dataset/foregrounds/images-temp/'
+    params['out_dir'] = '../dataset/mixed_images_miles_test/'
+    return params

@@ -81,7 +81,7 @@ def compose_img(params, bg, bg_fname, data):
         fg_final = resize_img(fg, bg)
 
         #if a second foreground directory is specified, iterate through that too
-        if params['fg2_dir'] and params['two_fg']:
+        if params['two_fg'] and params['fg2_dir']:
             for fg2_fname in glob.glob(os.path.join(params['fg2_dir'],params['im_ex'])):
                 out_image = bg.copy()
                 fg2 = Image.open(fg2_fname)
