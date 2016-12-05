@@ -8,15 +8,15 @@ python ./mix_fg_bg.py --fg_dir f1 --fg2_dir f2 --bg_dir b1 --out_dir o1
 Pull all foreground images (assuming .txt files of urls exist in ../dataset/foregrounds/txt/)
 ./pull_images.sh ../dataset/foregrounds/
 
-Run entire pipeline on all backgrounds and broccolli 
-~translation: mix all background images will all broccolli images (with otherwise default mix settings
- like overlay scale). Then classify them all and save the results in ../results/classifications_broccoli_all.csv,
- and save the overall accuracy in ../results/accuracy_broccoli_all.csv.
-./full_pipe.sh broccoli_all
+Run entire pipeline on all backgrounds and taxi 
+~translation: mix all background images will all taxi images (with otherwise default mix settings
+ like overlay scale). Then classify them all and save the results in ../results/classifications_taxi_all.csv,
+ and save the overall accuracy in ../results/accuracy_taxi_all.csv.
+./full_pipe.sh taxi_all
 
-Run entire pipe on all backgrounds and broccolli AS A BATCH JOB
+Run entire pipe on all backgrounds and taxi AS A BATCH JOB
 ~Note: read comments in full_pipe.sh and make sure conditions are met
-sbatch ./full_pipe.sh broccoli_all
+sbatch ./full_pipe.sh taxi_all
 
 General full pipe format
 ~see versions.py for versions. Don't inlcude the "-v" flag if being run from pull_pipe.sh

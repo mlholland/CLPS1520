@@ -7,9 +7,9 @@ params['out_dir'] = '../dataset/mixed_images_XYZ/'
 '''
 
 def version_0(params):
-    params['bg_dir'] = '../dataset/backgrounds/images/'
-    params['fg_dir'] = '../dataset/foregrounds/images/'
-    params['out_dir'] = '../dataset/images/'
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/all/'
+    params['out_dir'] = '../dataset/mixed_images_0'
     params['data'] = '../dataset/data.json'
     params['im_ex'] = '*.*g'
     params['x_dim'] = 227
@@ -27,7 +27,7 @@ def version_0(params):
 #gray with two foregrounds:
 def version_1(params):
     params = version_0(params)
-    params['fg2_dir'] = '../dataset/foregrounds/images;'
+    params['fg2_dir'] = '../dataset/foregrounds/images/all/;'
     params['bg_color'] = .5
     params['two_fg'] = True
     return params
@@ -35,7 +35,7 @@ def version_1(params):
 #backrgound images with two foregrounds:
 def version_2(params):
     params = version_0(params)
-    params['fg2_dir'] = '../dataset/foregrounds/images;'
+    params['fg2_dir'] = '../dataset/foregrounds/images/all;'
     params['two_fg'] = True
     return params
 
@@ -65,13 +65,15 @@ def version_phil(params):
 
 def version_miles_test(params):
     params = version_0(params)
-    params['fg_dir'] = '../dataset/foregrounds/images-temp/'
+    params['fg_dir'] = '../dataset/foregrounds/images/all/'
     params['out_dir'] = '../dataset/mixed_images_miles_test/'
     return params
 
-def version_broccoli_all(params):
+def version_taxi_all(params):
     params = version_0(params)
-    params['bg_dir'] = '../dataset/backgrounds/all/'
-    params['fg_dir'] = '../dataset/foregrounds/broccoli/'
-    params['out_dir'] = '../dataset/mixed_images_broccoli_all/'
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['out_dir'] = '../dataset/mixed_images_taxi_all/'
     return params
+
+
