@@ -4,7 +4,12 @@ import numpy as np
 
 NOTE: for ./full_pipe compatability, make sure for version_XYZ that
 params['out_dir'] = '../dataset/mixed_images_XYZ/'
+
+
+NOTE: change scratch to be your scratch space (your name)
 '''
+
+scratch = '/gpfs/scratch/guest123/matlab1520/mixed_images_'
 
 def version_0(params):
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
@@ -65,15 +70,15 @@ def version_phil(params):
 
 def version_miles_test(params):
     params = version_0(params)
-    params['fg_dir'] = '../dataset/foregrounds/images/all/'
-    params['out_dir'] = '../dataset/mixed_images_miles_test/'
+    params['fg_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['out_dir'] = scratch + 'miles_test/'
     return params
 
 def version_all_all_scale_01(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/all/'
-    params['out_dir'] = '../dataset/mixed_images_all_all_scale_01/'
+    params['out_dir'] = scratch + 'all_all_scale_01/'
     params['grid_scale'] = [0.1]
     return params
 
@@ -81,7 +86,7 @@ def version_all_all_scale_02(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/all/'
-    params['out_dir'] = '../dataset/mixed_images_all_all_scale_02/'
+    params['out_dir'] = scratch + 'all_all_scale_02/'
     params['grid_scale'] = [0.2]
     return params
 
@@ -89,7 +94,7 @@ def version_all_all_scale_03(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/all/'
-    params['out_dir'] = '../dataset/mixed_images_all_all_scale_03/'
+    params['out_dir'] = scratch + 'all_all_scale_03/'
     params['grid_scale'] = [0.3]
     return params
 
@@ -97,7 +102,7 @@ def version_all_all_scale_04(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/all/'
-    params['out_dir'] = '../dataset/mixed_images_all_all_scale_04/'
+    params['out_dir'] = scratch + 'all_all_scale_04/'
     params['grid_scale'] = [0.4]
     return params
 
@@ -105,7 +110,7 @@ def version_all_all_scale_05(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/all/'
-    params['out_dir'] = '../dataset/mixed_images_all_all_scale_05/'
+    params['out_dir'] = scratch + 'all_all_scale_05/'
     params['grid_scale'] = [0.5]
     return params
 
@@ -113,7 +118,7 @@ def version_all_all_scale_06(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/all/'
-    params['out_dir'] = '../dataset/mixed_images_all_all_scale_06/'
+    params['out_dir'] = scratch + 'all_all_scale_06/'
     params['grid_scale'] = [0.6]
     return params
 
@@ -121,7 +126,7 @@ def version_all_all_scale_07(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/all/'
-    params['out_dir'] = '../dataset/mixed_images_all_all_scale_07/'
+    params['out_dir'] = scratch + 'all_all_scale_07/'
     params['grid_scale'] = [0.7]
     return params
 
@@ -129,7 +134,7 @@ def version_all_all_scale_08(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/all/'
-    params['out_dir'] = '../dataset/mixed_images_all_all_scale_08/'
+    params['out_dir'] = scratch + 'all_all_scale_08/'
     params['grid_scale'] = [0.8]
     return params
 
@@ -137,7 +142,7 @@ def version_all_all_scale_09(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/all/'
-    params['out_dir'] = '../dataset/mixed_images_all_all_scale_09/'
+    params['out_dir'] = scratch + 'all_all_scale_09/'
     params['grid_scale'] = [0.9]
     return params
 
@@ -354,7 +359,7 @@ def version_taxi_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/taxi/'
-    params['out_dir'] = '../dataset/mixed_images_taxi_all/'
+    params['out_dir'] = scratch + 'taxi_all/'
     return params
 
 

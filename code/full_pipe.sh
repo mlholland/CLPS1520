@@ -9,21 +9,22 @@
 #CRITICAL NOTE: Before running, make sure
 ## that the run_name variable matches a mix_fg_bg version
 ## that params['out_dir'] = mix_dir (the mix_dir below, that is)
-## that you set time properly (takes about 6 min for 650 images, scale that)
+## that you set time properly (takes about 3.5 min for 670 images, scale that)
 
 #can either be run normally, or as an sbatch job using
 #sbatch ./full_pipe arguments
 
 
-#SBATCH --time=00:40:00
+#SBATCH --time=00:43:00
 #SBATCH --nodes=1
 #SBATCH --tasks-per-node=1
-#SBATCH --mem=1G
+#SBATCH --mem=2G
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:1
-
+me="$(whoami)"
+scratch='/gpfs/scratch/'$me'/matlab1520/mixed_images_'
 run_name=$1
-mix_dir='../dataset/mixed_images_'$run_name'/'
+mix_dir=$scratch$run_name'/'
 class='../results/classifications_'$run_name'.csv'
 accuracy='../results/accuracy_'$run_name'.csv'
 

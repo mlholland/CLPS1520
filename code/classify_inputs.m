@@ -15,6 +15,7 @@ function [ ] = classify_inputs( input_dir, output_fname )
     num_images = numel(files)
     output_str = '';
     counter = 0;
+    out_file = fopen(output_fname,'w');
     for file = files'
 	if mod(counter, 100) == 0
 	    counter
@@ -27,10 +28,10 @@ function [ ] = classify_inputs( input_dir, output_fname )
 	net_output = vl_simplenn(net, image_norm);
         cl = gather(net_output(end).x);
         [score, label] = max(cl);
-	output_str = sprintf('%s%s,"%s","%s"\n',output_str, file.name, char(labels(label)), mat2str(squeeze(cl)));
+	fprintf(out_file,'%s,"%s"\n',file.name, char(labels(label)));
+	%fprintf(out_file,'%s,"%s","%s"\n',file.name, char(labels(label)), mat2str(squeeze(cl))); 
+    
     end
-	out_file = fopen(output_fname,'a');
-	fprintf(out_file, '%s', output_str);
-	fclose(out_file);
+    fclose(out_file);
 	
 end
