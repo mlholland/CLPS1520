@@ -28,7 +28,8 @@ function [ ] = classify_inputs( input_dir, output_fname )
 	net_output = vl_simplenn(net, image_norm);
         cl = gather(net_output(end).x);
         [score, label] = max(cl);
-	fprintf(out_file,'%s,"%s","%s"\n',file.name, char(labels(label)), mat2str(squeeze(cl)));
+	fprintf(out_file,'%s,"%s"\n',file.name, char(labels(label)));
+	%fprintf(out_file,'%s,"%s","%s"\n',file.name, char(labels(label)), mat2str(squeeze(cl))); 
     
     end
     fclose(out_file);
