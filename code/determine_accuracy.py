@@ -24,9 +24,19 @@ def main():
         total = dd(int)
         for line in reader:
             classification = line[0].split('_')[0]            
-            if classification in line[1]:
-                right[classification] += 1
-            total[classification] += 1
+            if classification == '2':
+                class_1 = line[0].split('_')[1]
+                class_2 = line[0].split('_')[3]
+                if class_1 in line[1]:  
+                    right[class_1] += 1
+                if class_2 in line[1]:
+                    right[class_2] += 1
+                total[class_1] += 1
+                total[class_2] += 1
+            else:
+                if classification in line[1]:
+                    right[classification] += 1
+                total[classification] += 1
     with open(args.output, 'w') as f:
         for key in total.keys():
             f.write("%s, %f, %d, %d\n" % (key, 1.0 * right[key] / total[key], right[key], total[key]))
