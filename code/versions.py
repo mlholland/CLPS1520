@@ -146,13 +146,15 @@ def version_all_all_scale_09(params):
     params['grid_scale'] = [0.9]
     return params
 
-def version_2_taxi_toaster_all(params):
+####toaster cross##################
+
+def version_2_broccoli_toaster_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
-    params['fg_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['fg_dir'] = '../dataset/foregrounds/images/broccoli/'
     params['fg2_dir'] = '../dataset/foregrounds/images/toaster/'
     params['two_fg'] = True
-    params['out_dir'] = scratch + '2_taxi_toaster_all/'
+    params['out_dir'] = scratch + '2_broccoli_toaster_all/'
     return params
 
 def version_2_flamingo_toaster_all(params):
@@ -200,15 +202,6 @@ def version_2_powerdrill_toaster_all(params):
     params['out_dir'] = scratch + '2_powerdrill_toaster_all/'
     return params
 
-def version_2_tarantula_toaster_all(params):
-    params = version_0(params)
-    params['bg_dir'] = '../dataset/backgrounds/images/all/'
-    params['fg_dir'] = '../dataset/foregrounds/images/tarantula/'
-    params['fg2_dir'] = '../dataset/foregrounds/images/toaster/'
-    params['two_fg'] = True
-    params['out_dir'] = scratch + '2_tarantula_toaster_all/'
-    return params
-
 def version_2_shovel_toaster_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
@@ -218,11 +211,103 @@ def version_2_shovel_toaster_all(params):
     params['out_dir'] = scratch + '2_shovel_toaster_all/'
     return params
 
-def version_taxi_all(params):
+def version_2_tarantula_toaster_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/toaster/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_tarantula_toaster_all/'
+    return params
+
+def version_2_taxi_toaster_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/taxi/'
-    params['out_dir'] = scratch + 'taxi_all/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/toaster/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_taxi_toaster_all/'
     return params
 
+#########broccoli crosss
 
+def version_2_toaster_broccoli_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/toaster/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_toaster_broccoli_all/'
+    return params
+
+def version_2_flamingo_broccoli_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/flamingo/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_flamingo_broccoli_all/'
+    return params
+
+def version_2_hammer_broccoli_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/hammer/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_hammer_broccoli_all/'
+    return params
+
+def version_2_hummingbird_broccoli_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/hummingbird/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_hummingbird_broccoli_all/'
+    return params
+
+def version_2_laptop_broccoli_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/labtop/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_laptop_broccoli_all/'
+    return params
+
+def version_2_powerdrill_broccoli_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/powerdrill/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_powerdrill_broccoli_all/'
+    return params
+
+def version_2_shovel_broccoli_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/shovel/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_shovel_broccoli_all/'
+    return params
+
+def version_2_tarantula_broccoli_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_tarantula_broccoli_all/'
+    return params
+
+def version_2_taxi_broccoli_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_taxi_broccoli_all/'
+    return params
