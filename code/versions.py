@@ -152,7 +152,7 @@ def version_2_taxi_toaster_all(params):
     params['fg_dir'] = '../dataset/foregrounds/images/taxi/'
     params['fg2_dir'] = '../dataset/foregrounds/images/toaster/'
     params['two_fg'] = True
-    params['out_dir'] = '../dataset/mixed_images_2_taxi_toaster_all/'
+    params['out_dir'] = scratch + '2_taxi_toaster_all/'
     return params
 
 def version_2_flamingo_toaster_all(params):
