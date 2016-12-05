@@ -96,7 +96,7 @@ def compose_img(params, bg, bg_fname, data):
                 out_image = paste_img(fg2_final, out_image, .75, .5)          
 
                 #write output
-                out_fname = os.path.join(params['out_dir'], fg_fname[fg_fname.rindex('/') + 1:fg_fname.rindex('.')] + '_' +  \
+                out_fname = os.path.join(params['out_dir'], '2_' + fg_fname[fg_fname.rindex('/') + 1:fg_fname.rindex('.')] + '_' +  \
                                         fg2_fname[fg2_fname.rindex('/') + 1:fg2_fname.rindex('.')] + '_'  + bg_fname[bg_fname.rindex('/') + 1:])
                 out_image.save(out_fname)
                 fg2.close()
