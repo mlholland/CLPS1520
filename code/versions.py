@@ -1,5 +1,11 @@
 import numpy as np  
 
+'''
+
+NOTE: for ./full_pipe compatability, make sure for version_XYZ that
+params['out_dir'] = '../dataset/mixed_images_XYZ/'
+'''
+
 def version_0(params):
     params['bg_dir'] = '../dataset/backgrounds/images/'
     params['fg_dir'] = '../dataset/foregrounds/images/'
@@ -61,4 +67,11 @@ def version_miles_test(params):
     params = version_0(params)
     params['fg_dir'] = '../dataset/foregrounds/images-temp/'
     params['out_dir'] = '../dataset/mixed_images_miles_test/'
+    return params
+
+def version_broccoli_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/all/'
+    params['fg_dir'] = '../dataset/foregrounds/broccoli/'
+    params['out_dir'] = '../dataset/mixed_images_broccoli_all/'
     return params

@@ -22,9 +22,7 @@
 #SBATCH --partition=gpu
 #SBATCH --gres=gpu:1
 
-bg_dir=$1
-fg_dir=$2
-run_name=$3
+run_name=$1
 mix_dir='../dataset/mixed_images_'$run_name'/'
 class='../results/classifications_'$run_name'.csv'
 accuracy='../results/accuracy_'$run_name'.csv'
