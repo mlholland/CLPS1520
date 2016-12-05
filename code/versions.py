@@ -231,83 +231,83 @@ def version_2_taxi_toaster_all(params):
 
 #########broccoli crosss
 
-def version_2_toaster_broccoli_all(params):
+def version_2_toaster_flamingo_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/toaster/'
-    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/flamingo/'
     params['two_fg'] = True
-    params['out_dir'] = scratch + '2_toaster_broccoli_all/'
+    params['out_dir'] = scratch + '2_toaster_flamingo_all/'
     return params
 
-def version_2_flamingo_broccoli_all(params):
+def version_2_flamingo_flamingo_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/flamingo/'
-    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/flamingo/'
     params['two_fg'] = True
-    params['out_dir'] = scratch + '2_flamingo_broccoli_all/'
+    params['out_dir'] = scratch + '2_flamingo_flamingo_all/'
     return params
 
-def version_2_hammer_broccoli_all(params):
+def version_2_hammer_flamingo_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/hammer/'
-    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/flamingo/'
     params['two_fg'] = True
-    params['out_dir'] = scratch + '2_hammer_broccoli_all/'
+    params['out_dir'] = scratch + '2_hammer_flamingo_all/'
     return params
 
-def version_2_hummingbird_broccoli_all(params):
+def version_2_hummingbird_flamingo_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/hummingbird/'
-    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/flamingo/'
     params['two_fg'] = True
-    params['out_dir'] = scratch + '2_hummingbird_broccoli_all/'
+    params['out_dir'] = scratch + '2_hummingbird_flamingo_all/'
     return params
 
-def version_2_laptop_broccoli_all(params):
+def version_2_laptop_flamingo_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/labtop/'
-    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/flamingo/'
     params['two_fg'] = True
-    params['out_dir'] = scratch + '2_laptop_broccoli_all/'
+    params['out_dir'] = scratch + '2_laptop_flamingo_all/'
     return params
 
-def version_2_powerdrill_broccoli_all(params):
+def version_2_powerdrill_flamingo_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/powerdrill/'
-    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/flamingo/'
     params['two_fg'] = True
-    params['out_dir'] = scratch + '2_powerdrill_broccoli_all/'
+    params['out_dir'] = scratch + '2_powerdrill_flamingo_all/'
     return params
 
-def version_2_shovel_broccoli_all(params):
+def version_2_shovel_flamingo_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/shovel/'
-    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/flamingo/'
     params['two_fg'] = True
-    params['out_dir'] = scratch + '2_shovel_broccoli_all/'
+    params['out_dir'] = scratch + '2_shovel_flamingo_all/'
     return params
 
-def version_2_tarantula_broccoli_all(params):
+def version_2_tarantula_flamingo_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/tarantula/'
-    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/flamingo/'
     params['two_fg'] = True
-    params['out_dir'] = scratch + '2_tarantula_broccoli_all/'
+    params['out_dir'] = scratch + '2_tarantula_flamingo_all/'
     return params
 
-def version_2_taxi_broccoli_all(params):
+def version_2_taxi_flamingo_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
     params['fg_dir'] = '../dataset/foregrounds/images/taxi/'
-    params['fg2_dir'] = '../dataset/foregrounds/images/broccoli/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/flamingo/'
     params['two_fg'] = True
-    params['out_dir'] = scratch + '2_taxi_broccoli_all/'
+    params['out_dir'] = scratch + '2_taxi_flamingo_all/'
     return params
