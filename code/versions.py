@@ -31,20 +31,23 @@ def version_0(params):
     return params
 
 def version_preston(params):
-    #TODO
-    params['bg_dir'] = '../phil_images/b1/'
-    params['out_dir'] = '../phil_images/o1/'
+    #params = version_0
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['out_dir'] = '../results/'
     return params
-
+#MILES!!!!!
 def version_control(params):
     params = version_0(params)
     params['bg_color'] = .5
     params['grid_scale'] = .9
+    return params
 
 def version_background(params):
     params = version_0(params)
     params['bg_only'] = True
+    return params
 
+#MILESSSSS
 #gray with two foregrounds:
 def version_1(params):
     params = version_0(params)
