@@ -16,7 +16,8 @@ for zoom = 0:1:2
     contrast_clutter = luminancecontrast(lab);
     
     [Y,X,Z] = size(lab);
-    covariance = cov(reshape(lab,[Y*X,Z]));
+    lab1 = double(reshape(lab, [Y*X, Z]));
+    covariance = cov(lab1);
     e = eig(covariance);
     
     color_clutter = 4/3 * pi * prod(e);

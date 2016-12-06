@@ -16,7 +16,7 @@ Lc = imgaussfilt(L,3) - imgaussfilt(L,5);
 
 Lc = abs(Lc);
 
-contrast = max(Lc);
+contrast = max(max(Lc));
 
 %contrast = sum(Lc .^ 2);
 
