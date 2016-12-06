@@ -170,8 +170,9 @@ def main():
                     continue
             data = compose_img(params, bg, bg_fname, data)
             bg.close()
-    with open(params['data'],'w') as data_json:
-        json.dump(data, data_json)
+    if not params['bg_only']:
+        with open(params['data'],'w') as data_json:
+            json.dump(data, data_json)
 
 if __name__ == '__main__':
     main()
