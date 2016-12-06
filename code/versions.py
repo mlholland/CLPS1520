@@ -26,8 +26,24 @@ def version_0(params):
     params['grid_scale'] = [.5]
     params['grid_occlusion'] = [0]
     params['grid_opacity'] = [1]
+    params['bg_only'] = False
 
     return params
+
+def version_preston(params):
+    #TODO
+    params['bg_dir'] = '../phil_images/b1/'
+    params['out_dir'] = '../phil_images/o1/'
+    return params
+
+def version_control(params):
+    params = version_0(params)
+    params['bg_color'] = .5
+    params['grid_scale'] = .9
+
+def version_background(params):
+    params = version_0(params)
+    params['bg_only'] = True
 
 #gray with two foregrounds:
 def version_1(params):

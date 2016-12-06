@@ -164,6 +164,10 @@ def main():
             bg = Image.open(bg_fname)
             if params['x_dim'] and params['y_dim']:
                 bg = center_crop_img(bg, params['x_dim'], params['y_dim'])
+                    if params['bg_only']:
+                        out_fname = os.path.join(params['out_dir'], params['x_dim'] + '_' + params['y_dim'] + '_' + bg_fname[bg_fname.rindex('/') + 1:])
+                        out_image.save(out_fname)
+                        continue
             data = compose_img(params, bg, bg_fname, data)
             bg.close()
     with open(params['data'],'w') as data_json:
