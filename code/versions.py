@@ -26,9 +26,28 @@ def version_0(params):
     params['grid_scale'] = [.5]
     params['grid_occlusion'] = [0]
     params['grid_opacity'] = [1]
+    params['bg_only'] = False
 
     return params
 
+def version_preston(params):
+    #params = version_0
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['out_dir'] = '../results/'
+    return params
+#MILES!!!!!
+def version_control(params):
+    params = version_0(params)
+    params['bg_color'] = .5
+    params['grid_scale'] = .9
+    return params
+
+def version_background(params):
+    params = version_0(params)
+    params['bg_only'] = True
+    return params
+
+#MILESSSSS
 #gray with two foregrounds:
 def version_1(params):
     params = version_0(params)
