@@ -187,7 +187,7 @@ def version_2_hummingbird_toaster_all(params):
 def version_2_laptop_toaster_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
-    params['fg_dir'] = '../dataset/foregrounds/images/labtop/'
+    params['fg_dir'] = '../dataset/foregrounds/images/laptop/'
     params['fg2_dir'] = '../dataset/foregrounds/images/toaster/'
     params['two_fg'] = True
     params['out_dir'] = scratch + '2_laptop_toaster_all/'
@@ -261,7 +261,7 @@ def version_2_hummingbird_flamingo_all(params):
 def version_2_laptop_flamingo_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
-    params['fg_dir'] = '../dataset/foregrounds/images/labtop/'
+    params['fg_dir'] = '../dataset/foregrounds/images/laptop/'
     params['fg2_dir'] = '../dataset/foregrounds/images/flamingo/'
     params['two_fg'] = True
     params['out_dir'] = scratch + '2_laptop_flamingo_all/'
@@ -335,7 +335,7 @@ def version_2_hummingbird_hammer_all(params):
 def version_2_laptop_hammer_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
-    params['fg_dir'] = '../dataset/foregrounds/images/labtop/'
+    params['fg_dir'] = '../dataset/foregrounds/images/laptop/'
     params['fg2_dir'] = '../dataset/foregrounds/images/hammer/'
     params['two_fg'] = True
     params['out_dir'] = scratch + '2_laptop_hammer_all/'
@@ -409,7 +409,7 @@ def version_2_hammer_hummingbird_all(params):
 def version_2_laptop_hummingbird_all(params):
     params = version_0(params)
     params['bg_dir'] = '../dataset/backgrounds/images/all/'
-    params['fg_dir'] = '../dataset/foregrounds/images/labtop/'
+    params['fg_dir'] = '../dataset/foregrounds/images/laptop/'
     params['fg2_dir'] = '../dataset/foregrounds/images/hummingbird/'
     params['two_fg'] = True
     params['out_dir'] = scratch + '2_laptop_hummingbird_all/'
@@ -449,4 +449,374 @@ def version_2_taxi_hummingbird_all(params):
     params['fg2_dir'] = '../dataset/foregrounds/images/hummingbird/'
     params['two_fg'] = True
     params['out_dir'] = scratch + '2_taxi_hummingbird_all/'
+    return params
+
+#########laptop crosss
+
+def version_2_toaster_laptop_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/toaster/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/laptop/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_toaster_laptop_all/'
+    return params
+
+def version_2_flamingo_laptop_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/flamingo/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/laptop/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_flamingo_laptop_all/'
+    return params
+
+def version_2_hammer_laptop_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/laptop/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/laptop/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_laptop_laptop_all/'
+    return params
+
+def version_2_hummingbird_laptop_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/laptop/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/laptop/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_laptop_laptop_all/'
+    return params
+
+def version_2_powerdrill_laptop_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/powerdrill/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/laptop/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_powerdrill_laptop_all/'
+    return params
+
+def version_2_shovel_laptop_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/shovel/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/laptop/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_shovel_laptop_all/'
+    return params
+
+def version_2_tarantula_laptop_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/laptop/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_tarantula_laptop_all/'
+    return params
+
+def version_2_taxi_laptop_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/laptop/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_taxi_laptop_all/'
+    return params
+
+#########powerdrill crosss
+
+def version_2_toaster_powerdrill_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/toaster/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/powerdrill/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_toaster_powerdrill_all/'
+    return params
+
+def version_2_flamingo_powerdrill_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/flamingo/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/powerdrill/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_flamingo_powerdrill_all/'
+    return params
+
+def version_2_hammer_powerdrill_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/powerdrill/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/powerdrill/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_powerdrill_powerdrill_all/'
+    return params
+
+def version_2_laptop_powerdrill_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/laptop/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/powerdrill/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_laptop_powerdrill_all/'
+    return params
+
+def version_2_hummingbird_powerdrill_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/powerdrill/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/powerdrill/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_powerdrill_powerdrill_all/'
+    return params
+
+def version_2_shovel_powerdrill_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/shovel/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/powerdrill/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_shovel_powerdrill_all/'
+    return params
+
+def version_2_tarantula_powerdrill_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/powerdrill/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_tarantula_powerdrill_all/'
+    return params
+
+def version_2_taxi_powerdrill_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/powerdrill/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_taxi_powerdrill_all/'
+    return params
+
+#########shovel crosss
+
+def version_2_toaster_shovel_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/toaster/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/shovel/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_toaster_shovel_all/'
+    return params
+
+def version_2_flamingo_shovel_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/flamingo/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/shovel/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_flamingo_shovel_all/'
+    return params
+
+def version_2_hammer_shovel_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/shovel/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/shovel/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_shovel_shovel_all/'
+    return params
+
+def version_2_laptop_shovel_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/laptop/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/shovel/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_laptop_shovel_all/'
+    return params
+
+def version_2_powerdrill_shovel_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/powerdrill/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/shovel/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_powerdrill_shovel_all/'
+    return params
+
+def version_2_hummingbird_shovel_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/shovel/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/shovel/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_shovel_shovel_all/'
+    return params
+
+def version_2_tarantula_shovel_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/shovel/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_tarantula_shovel_all/'
+    return params
+
+def version_2_taxi_shovel_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/shovel/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_taxi_shovel_all/'
+    return params
+
+#########tarantula crosss
+
+def version_2_toaster_tarantula_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/toaster/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_toaster_tarantula_all/'
+    return params
+
+def version_2_flamingo_tarantula_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/flamingo/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_flamingo_tarantula_all/'
+    return params
+
+def version_2_hammer_tarantula_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_tarantula_tarantula_all/'
+    return params
+
+def version_2_laptop_tarantula_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/laptop/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_laptop_tarantula_all/'
+    return params
+
+def version_2_powerdrill_tarantula_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/powerdrill/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_powerdrill_tarantula_all/'
+    return params
+
+def version_2_hummingbird_tarantula_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_tarantula_tarantula_all/'
+    return params
+
+def version_2_shovel_tarantula_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_tarantula_tarantula_all/'
+    return params
+
+def version_2_taxi_tarantula_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_taxi_tarantula_all/'
+    return params
+
+#########taxi crosss
+
+def version_2_toaster_taxi_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/toaster/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_toaster_taxi_all/'
+    return params
+
+def version_2_flamingo_taxi_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/flamingo/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_flamingo_taxi_all/'
+    return params
+
+def version_2_hammer_taxi_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_taxi_taxi_all/'
+    return params
+
+def version_2_laptop_taxi_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/laptop/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_laptop_taxi_all/'
+    return params
+
+def version_2_powerdrill_taxi_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/powerdrill/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_powerdrill_taxi_all/'
+    return params
+
+def version_2_hummingbird_taxi_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_taxi_taxi_all/'
+    return params
+
+def version_2_tarantula_taxi_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/tarantula/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_tarantula_taxi_all/'
+    return params
+
+def version_2_shovel_taxi_all(params):
+    params = version_0(params)
+    params['bg_dir'] = '../dataset/backgrounds/images/all/'
+    params['fg_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['fg2_dir'] = '../dataset/foregrounds/images/taxi/'
+    params['two_fg'] = True
+    params['out_dir'] = scratch + '2_taxi_taxi_all/'
     return params
