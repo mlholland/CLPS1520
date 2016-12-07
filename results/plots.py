@@ -18,12 +18,16 @@ def scale_plot():
 			for row in reader:
 				y_all[c_i[row[0]]][scale_index] = row[1]
 	for i,y in enumerate(y_all):
-		plt.plot(x,y, label = i_c[i])
+		plt.plot(x,y, label = i_c[i], lw = 2)
 	plt.xlabel('Foreground Scale')
 	plt.ylabel('Classification Accuracy')
 	plt.title('Image Scale and Classifaction Accuracy in AlexNet')
 	plt.legend()
 	plt.show()
+
+def combos_map():
+	z = np.ndarray((9,9));
+	
 scale_plot()
 
 
