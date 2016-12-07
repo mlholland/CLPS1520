@@ -16,7 +16,11 @@ Lc = imgaussfilt(L,3) - imgaussfilt(L,5);
 
 Lc = abs(Lc);
 
-contrast = max(max(Lc));
+% Global maximum was casting complexity to 128 on large images - pixel
+% maximum.  Instead, try averaging.
+%contrast = max(max(Lc));
+
+contrast = mean2(Lc);
 
 %contrast = sum(Lc .^ 2);
 
