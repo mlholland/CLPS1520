@@ -34,7 +34,7 @@ forest17.jpg_power drill, 0.000000, 0, 9
 desert24.jpg_tarantula, 0.000000, 0, 9
 sky09.jpg_taxi, 0.000000, 0, 9
 sky17.jpg_laptop, 0.000000, 0, 9
-desert06.jpg_laptop, 0.000000, 0, 9
+desert06.jpg_laptop, 0.111111, 1, 9
 sky08.jpg_hummingbird, 0.000000, 0, 10
 sky15.jpg_shovel, 0.000000, 0, 10
 desert21.jpg_toaster, 0.000000, 0, 9
@@ -89,7 +89,7 @@ forest22.jpg_toaster, 0.000000, 0, 9
 desert11.jpg_toaster, 0.000000, 0, 9
 sky10.jpg_toaster, 0.000000, 0, 9
 forest01.jpg_taxi, 0.000000, 0, 9
-desert17.jpg_laptop, 0.000000, 0, 9
+desert17.jpg_laptop, 0.111111, 1, 9
 sky18.jpg_tarantula, 0.000000, 0, 9
 sky04.jpg_power drill, 0.000000, 0, 9
 forest05.jpg_taxi, 0.000000, 0, 9
@@ -199,7 +199,7 @@ forest05.jpg_shovel, 0.000000, 0, 10
 sky05.jpg_power drill, 0.000000, 0, 9
 sky03.jpg_laptop, 0.000000, 0, 9
 sky03.jpg_shovel, 0.000000, 0, 10
-forest22.jpg_taxi, 0.000000, 0, 9
+forest22.jpg_taxi, 0.111111, 1, 9
 desert24.jpg_power drill, 0.000000, 0, 9
 desert23.jpg_power drill, 0.000000, 0, 9
 sky21.jpg_power drill, 0.000000, 0, 9
@@ -484,7 +484,7 @@ forest16.jpg_flamingo, 0.000000, 0, 9
 desert03.jpg_hammer, 0.000000, 0, 9
 forest06.jpg_toaster, 0.000000, 0, 9
 forest09.jpg_taxi, 0.000000, 0, 9
-forest18.jpg_taxi, 0.000000, 0, 9
+forest18.jpg_taxi, 0.111111, 1, 9
 sky23.jpg_hammer, 0.000000, 0, 9
 forest21.jpg_hummingbird, 0.000000, 0, 10
 sky12.jpg_tarantula, 0.000000, 0, 9
