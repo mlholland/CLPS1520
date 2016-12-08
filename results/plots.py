@@ -24,29 +24,32 @@ def scale_plot():
 	plt.xlabel('Foreground Scale')
 	plt.ylabel('Classification Accuracy')
 	plt.title('Image Scale and Classifaction Accuracy in AlexNet')
-	plt.legend()
-	plt.show()
+	plt.legend(loc = 'upper left', bbox_to_anchor=(1,1))
 
 def combos_map():
-	z = np.zeros((9,9,3));
+	z = np.ones((9,9,3))*1;
 	for file in glob.iglob('accuracy_2*.csv'):
 		with open(file, 'rb') as f:
 			reader = csv.reader(f)
+			fg = {}
 			for i,row in enumerate(reader):
 				if row[0] == 'power drill': row[0] = 'powerdrill' 
-				if i == 0: 
-					x = c_i[row[0]]
-					r = float(row[1])*10
-				if i == 1: 
-					y = c_i[row[0]]
-					b = float(row[1])*10
-
-			z[x,y,0] = r
-			z[x,y,2] = b
-
+				fg[c_i[row[0]]] = float(row[1])*15
+			if len(fg):
+				x = max(fg.keys())
+				y = min(fg.keys())
+				z[x,y,0] = fg[x]
+				z[x,y,1] = 0
+				z[x,y,2] = fg[y]
+				# if z[x,y,1] == 1:
+				# 	z[x,y,0] = fg[x]
+				# 	z[x,y,1] = 0
+				# 	z[x,y,2] = fg[y]
 	plt.figure()
+	# plt.xlabel('Foreground Class (Blue)')
+	# plt.ylabel('Foreground Class (Red)')
+	plt.title('Two Foreground Image Classification Trends')
 	plt.imshow(z, interpolation='nearest')
-	plt.show()
 
 def bg_clutter(filename):
 	bg_acc = {}
@@ -72,17 +75,18 @@ def bg_clutter(filename):
 		for k,v in bg_acc.iteritems():
 			acc.append(v[0]/v[1])
 			clut.append(v[2])
-		plt.figure()
-		plt.scatter(clut,acc)
-		plt.show()
+	plt.figure()
+	plt.title('How Background Clutter Affects AlexNet Accuracy')
+	plt.xlabel('Background Clutter')
+	plt.ylabel('Classification Accuracy')
+	plt.scatter(clut,acc,s=25)
 
 
 
 #32
 
 bg_clutter('../backgroundclutters.csv')
-bg_clutter('../backgroundcluttersmax.csv')
-#combos_map()	
-#scale_plot()
-
-
+#bg_clutter('../backgroundcluttersmax.csv')
+combos_map()	
+scale_plot()
+plt.show()
